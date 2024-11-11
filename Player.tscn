@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Material da Aula/sons/batendoasas.wav" type="AudioStream" id=1]
+[ext_resource path="res://Material da Aula/sons/tema.wav" type="AudioStream" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Player" type="RigidBody"]
+script = ExtResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+current = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="batendoasas" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 1 )
+unit_db = 20.0
+
+[node name="tema" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 2 )
+unit_db = -10.0
